@@ -1,0 +1,7 @@
+String str = "分词结果为： 据悉/v ，/wd 质检/vn 总局/n 已/d 将/d 最新/a 有关/vn 情况/n 再次/d 通报/v 美方/n ，/wd 要求/v 美方/n 加强/v 对/p 输/v 华/b 玉米/n 的/ude1 产地/n 来源/n 、/wn 运输/vn 及/cc 仓储/vn 等/udeng 环节/n 的/ude1 管/v 控/v 措施/n ，/wd 有效/ad 避免/v 输/v 华/b 玉米/n 被/pbei 未经/d 我国/n 农业部/nt 安全/an 评估/vn 并/cc 批准/v 的/ude1 转基因/n 品系/n 污染/vn 。/wj  增加用户词典后分词结果为： 据悉/v ，/wd 质检/vn 总局/n 已/d 将/d 最新/a 有关/vn 情况/n 再次/d 通报/v 美方/n ，/wd 要求美方加强对输/n 华玉米的产地来源/n 、/wn 运输/vn 及/cc 仓储/vn 等/udeng 环节/n 的/ude1 管/v 控/v 措施/n ，/wd 有效/ad 避免/v 输/v 华/b 玉米/n 被/pbei 未经/d 我国/n 农业部/nt 安全/an 评估/vn 并/cc 批准/v 的/ude1 转基因/n 品系/n 污染/vn 。/wj  删除用户词典后分词结果为： 据悉/v ，/wd 质检/vn 总局/n 已/d 将/d 最新/a 有关/vn 情况/n 再次/d 通报/v 美方/n ，/wd 要求/v 美方/n 加强/v 对/p 输/v 华玉米的产地来源/n 、/wn 运输/vn 及/cc 仓储/vn 等/udeng 环节/n 的/ude1 管/v 控/v 措施/n ，/wd 有效/ad 避免/v 输/v 华/b 玉米/n 被/pbei 未经/d 我国/n 农业部/nt 安全/an 评估/vn 并/cc 批准/v 的/ude1 转基因/n 品系/n 污染/vn 。/wj  关键词提取结果是：华玉米的产地来源#农业部#有关#污染#关键词提取结果是：";
+		String pattern = "(?<= )[\\u4e00-\\u9fa5]+(?=/n|/vn|/v)";
+
+		Pattern r = Pattern.compile(pattern);
+		Matcher m = r.matcher(str);
+		while(m.find())
+		System.out.println(m.group());
